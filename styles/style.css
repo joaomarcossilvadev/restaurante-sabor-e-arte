@@ -1,0 +1,963 @@
+/* =========================================================
+   IMPORTAÇÃO DAS FONTES
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   VARIÁVEIS
+   ========================================================= */
+
+:root {
+    --cor-acao: #C85A32;
+    --cor-secundaria: #5B7065;
+    --cor-fundo: #F9F6F0;
+    --cor-texto: #1A1A1A;
+    --cor-cards: #EFECE6;
+    --cor-branco: #FFFFFF;
+
+    --fonte-titulo: 'Lora', serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    --largura-maxima: 1200px;
+
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 2rem;
+    --espacamento-secao: 5rem;
+
+    --raio: 12px;
+    --transicao: 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================================================
+   TIPOGRAFIA
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+h2 {
+    margin-bottom: 0.8rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+}
+
+p {
+    color: #444;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+a:focus-visible {
+    outline: 3px solid var(--cor-acao);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid rgba(91, 112, 101, 0.25);
+}
+
+body > header nav {
+    width: min(100% - 2rem, var(--largura-maxima));
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+/* Logo */
+
+body > header nav > a:first-child {
+    flex-shrink: 0;
+
+    color: var(--cor-texto);
+
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+
+/* Menu */
+
+body > header nav ul {
+    display: flex;
+    align-items: center;
+
+    gap: 1.8rem;
+}
+
+body > header nav ul a {
+    position: relative;
+
+    font-weight: 500;
+
+    transition: color var(--transicao);
+}
+
+body > header nav ul a::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--cor-acao);
+
+    transition: width var(--transicao);
+}
+
+body > header nav ul a:hover {
+    color: var(--cor-acao);
+}
+
+body > header nav ul a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+body > header nav > a:last-child,
+#principal > header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.6rem;
+
+    color: var(--cor-branco);
+    background-color: var(--cor-acao);
+
+    border: 2px solid var(--cor-acao);
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition:
+        background-color var(--transicao),
+        color var(--transicao),
+        transform var(--transicao);
+}
+
+
+/* Botão Fazer pedido */
+
+body > header nav > a:last-child {
+    flex-shrink: 0;
+
+    padding: 0.75rem 1.2rem;
+}
+
+
+/* Botão do Hero */
+
+#principal > header a {
+    padding: 0.9rem 1.5rem;
+}
+
+
+/* Ícones dos botões */
+
+body > header nav > a:last-child i,
+#principal > header a i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    color: currentColor;
+
+    font-size: 1rem;
+    line-height: 1;
+
+    position: static;
+    transform: none;
+}
+
+
+/* Hover dos botões */
+
+body > header nav > a:last-child:hover,
+#principal > header a:hover {
+    background-color: transparent;
+    color: var(--cor-acao);
+
+    transform: translateY(-2px);
+}
+
+#principal > header a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO DAS SEÇÕES
+   ========================================================= */
+
+main > section {
+    width: min(100% - 2rem, var(--largura-maxima));
+
+    margin: 0 auto;
+    padding: var(--espacamento-secao) 20px;
+}
+
+main > section > header {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+}
+
+main > section > header p {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SEÇÃO PRINCIPAL / HERO
+   ========================================================= */
+
+#principal {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+
+    min-height: 650px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Imagem */
+
+#principal figure {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+#principal figure img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Overlay */
+
+#principal figure::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+/* Conteúdo */
+
+#principal > header {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto;
+    padding: 2rem;
+
+    text-align: center;
+}
+
+#principal h1,
+#principal p {
+    color: var(--cor-branco);
+}
+
+#principal h1 {
+    margin-bottom: 1.2rem;
+}
+
+#principal p {
+    max-width: 650px;
+
+    margin: 0 auto 2rem;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   ÍCONES
+   ========================================================= */
+
+.fa-solid,
+.fa-brands {
+    color: var(--cor-acao);
+}
+
+
+/* =========================================================
+   DIFERENCIAIS
+   ========================================================= */
+
+main > section:nth-of-type(2) {
+    width: 100%;
+    max-width: none;
+
+    padding-left: max(
+        1rem,
+        calc((100% - var(--largura-maxima)) / 2)
+    );
+
+    padding-right: max(
+        1rem,
+        calc((100% - var(--largura-maxima)) / 2)
+    );
+
+    background-color: var(--cor-fundo);
+}
+
+
+/* Cards */
+
+main > section:nth-of-type(2) > article {
+    width: 100%;
+
+    padding: 2rem;
+
+    background-color: var(--cor-cards);
+
+    border: 1px solid var(--cor-secundaria);
+    border-radius: var(--raio);
+
+    text-align: center;
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+
+/* Ícones */
+
+main > section:nth-of-type(2) > article > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 1.2rem;
+
+    color: var(--cor-acao);
+
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 50%;
+
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+
+/* Hover */
+
+main > section:nth-of-type(2) > article:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(26, 26, 26, 0.10);
+}
+
+
+/* =========================================================
+   CARDÁPIO
+   ========================================================= */
+
+#cardapio {
+    background-color: var(--cor-cards);
+}
+
+
+/* Cards dos pratos */
+
+#cardapio > article {
+    overflow: hidden;
+
+    margin-bottom: 2rem;
+
+    background-color: var(--cor-fundo);
+
+    border: 1px solid rgba(91, 112, 101, 0.35);
+    border-radius: var(--raio);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+
+/* Imagens */
+
+#cardapio article figure {
+    overflow: hidden;
+}
+
+#cardapio article figure img {
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+#cardapio article:hover figure img {
+    transform: scale(1.05);
+}
+
+
+/* Legenda */
+
+#cardapio article figcaption {
+    display: none;
+}
+
+
+/* Conteúdo */
+
+#cardapio article h3,
+#cardapio article > p {
+    margin-left: 1.3rem;
+    margin-right: 1.3rem;
+}
+
+#cardapio article h3 {
+    margin-top: 1.3rem;
+}
+
+
+/* Preço */
+
+#cardapio article > p:first-of-type {
+    color: var(--cor-acao);
+
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+#cardapio article > p:last-of-type {
+    padding-bottom: 1.4rem;
+}
+
+
+/* Hover */
+
+#cardapio > article:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 25px rgba(26, 26, 26, 0.10);
+}
+
+
+/* =========================================================
+   SOBRE NÓS
+   ========================================================= */
+
+#sobre {
+    background-color: var(--cor-fundo);
+}
+
+#sobre article {
+    display: flex;
+    align-items: center;
+
+    gap: 3rem;
+}
+
+#sobre article > p {
+    flex: 1;
+
+    font-size: 1.05rem;
+}
+
+#sobre article figure {
+    flex: 1;
+
+    overflow: hidden;
+
+    border: 1px solid var(--cor-secundaria);
+    border-radius: var(--raio);
+}
+
+#sobre article figure img {
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+}
+
+#sobre article figcaption {
+    padding: 0.8rem 1rem;
+
+    background-color: var(--cor-cards);
+
+    color: var(--cor-texto);
+
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTATO / LOCALIZAÇÃO
+   ========================================================= */
+
+#contato {
+    background-color: var(--cor-cards);
+}
+
+#contato > article {
+    padding: 2rem;
+
+    background-color: var(--cor-fundo);
+
+    border: 1px solid var(--cor-secundaria);
+    border-radius: var(--raio);
+}
+
+#contato > article h3 {
+    margin-bottom: 1rem;
+}
+
+#contato address {
+    color: #444;
+
+    font-style: normal;
+}
+
+#contato ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+}
+
+#contato strong {
+    color: var(--cor-secundaria);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+body > footer {
+    padding: 1rem 1rem;
+
+    background-color: var(--cor-texto);
+    color: var(--cor-branco);
+
+    text-align: center;
+}
+
+body > footer p {
+    color: var(--cor-branco);
+}
+
+body > footer p + p {
+    margin-top: 0.4rem;
+
+    color: #cfcfcf;
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+body > footer nav {
+    margin-top: 1.5rem;
+}
+
+body > footer nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+body > footer nav a {
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 50%;
+
+    color: var(--cor-branco);
+
+    font-size: 0;
+
+    transition:
+        background-color var(--transicao),
+        border-color var(--transicao),
+        transform var(--transicao);
+}
+
+
+/* Ícones sociais */
+
+body > footer nav a i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+
+    font-size: 1.1rem;
+    line-height: 1;
+
+    position: static;
+    transform: none;
+}
+
+
+/* Hover */
+
+body > footer nav a:hover{
+    background-color: var(--cor-acao);
+    border-color: var(--cor-acao);
+    color: var(--cor-branco);
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+    /* Diferenciais */
+
+    main > section:nth-of-type(2) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 1.5rem;
+    }
+
+    main > section:nth-of-type(2) > header {
+        width: 100%;
+    }
+
+    main > section:nth-of-type(2) > article {
+        flex: 1 1 250px;
+
+        max-width: 360px;
+    }
+
+
+    /* Cardápio */
+
+    #cardapio {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 1.5rem;
+    }
+
+    #cardapio > header {
+        grid-column: 1 / -1;
+    }
+
+    #cardapio > article {
+        margin-bottom: 0;
+    }
+
+
+    /* Contato */
+
+    #contato {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 1.5rem;
+    }
+
+    #contato > header {
+        grid-column: 1 / -1;
+    }
+
+    #contato > article {
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+    /* Seções */
+
+    main > section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+
+    /* Hero */
+
+    #principal {
+        min-height: 720px;
+    }
+
+
+    /* Cardápio */
+
+    #cardapio {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 2rem;
+    }
+
+
+    /* Contato */
+
+    #contato {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 2rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 599px) {
+
+    /* Cabeçalho */
+
+    body > header nav {
+        min-height: auto;
+
+        padding: 1rem 0;
+
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 1rem;
+    }
+
+    body > header nav > a:first-child {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    body > header nav ul {
+        gap: 1rem;
+
+        font-size: 0.9rem;
+    }
+
+    body > header nav > a:last-child {
+        width: 100%;
+    }
+
+
+    /* Hero */
+
+    #principal {
+        min-height: 600px;
+    }
+
+    #principal > header {
+        padding: 1rem;
+    }
+
+    #principal p {
+        font-size: 1rem;
+    }
+
+
+    /* Diferenciais */
+
+    main > section:nth-of-type(2) > article {
+        margin-bottom: 1rem;
+    }
+
+    main > section:nth-of-type(2) > article:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* Cardápio */
+
+    #cardapio > article {
+        margin-bottom: 1.5rem;
+    }
+
+
+    /* Sobre */
+
+    #sobre article {
+        flex-direction: column;
+
+        gap: 2rem;
+    }
+
+    #sobre article > p,
+    #sobre article figure {
+        width: 100%;
+    }
+
+
+    /* Contato */
+
+    #contato > article {
+        margin-bottom: 1rem;
+    }
+
+    #contato > article:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
