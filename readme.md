@@ -191,6 +191,13 @@ restaurante-sabor-arte/
 
 ---
 
+## 📄 Documentação do projeto
+
+Foi criado um documento em PDF contendo os prompts utilizados para gerar a ideia, a estrutura HTML e a estilização CSS do projeto.
+
+📥 [Acessar o documento em PDF](./docs/prompts-usados.pdf)
+
+---
 ## 🧩 Seções da página
 
 O projeto é dividido nas seguintes seções:
