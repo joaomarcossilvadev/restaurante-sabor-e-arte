@@ -142,7 +142,9 @@ body > header nav {
 }
 
 
-/* Logo */
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 body > header nav > a:first-child {
     flex-shrink: 0;
@@ -155,7 +157,9 @@ body > header nav > a:first-child {
 }
 
 
-/* Menu */
+/* =========================================================
+   MENU
+   ========================================================= */
 
 body > header nav ul {
     display: flex;
@@ -223,7 +227,9 @@ body > header nav > a:last-child,
 }
 
 
-/* Botão Fazer pedido */
+/* =========================================================
+   BOTÃO FAZER PEDIDO
+   ========================================================= */
 
 body > header nav > a:last-child {
     flex-shrink: 0;
@@ -232,14 +238,18 @@ body > header nav > a:last-child {
 }
 
 
-/* Botão do Hero */
+/* =========================================================
+   BOTÃO DO HERO
+   ========================================================= */
 
 #principal > header a {
     padding: 0.9rem 1.5rem;
 }
 
 
-/* Ícones dos botões */
+/* =========================================================
+   ÍCONES DOS BOTÕES
+   ========================================================= */
 
 body > header nav > a:last-child i,
 #principal > header a i {
@@ -263,7 +273,9 @@ body > header nav > a:last-child i,
 }
 
 
-/* Hover dos botões */
+/* =========================================================
+   HOVER DOS BOTÕES
+   ========================================================= */
 
 body > header nav > a:last-child:hover,
 #principal > header a:hover {
@@ -325,7 +337,9 @@ main > section > header p {
 }
 
 
-/* Imagem */
+/* =========================================================
+   IMAGEM DO HERO
+   ========================================================= */
 
 #principal figure {
     position: absolute;
@@ -341,7 +355,9 @@ main > section > header p {
 }
 
 
-/* Overlay */
+/* =========================================================
+   OVERLAY DO HERO
+   ========================================================= */
 
 #principal figure::after {
     content: '';
@@ -353,7 +369,9 @@ main > section > header p {
 }
 
 
-/* Conteúdo */
+/* =========================================================
+   CONTEÚDO DO HERO
+   ========================================================= */
 
 #principal > header {
     position: relative;
@@ -384,7 +402,7 @@ main > section > header p {
 
 
 /* =========================================================
-   ÍCONES
+   ÍCONES GERAIS
    ========================================================= */
 
 .fa-solid,
@@ -415,7 +433,9 @@ main > section:nth-of-type(2) {
 }
 
 
-/* Cards */
+/* =========================================================
+   CARDS DOS DIFERENCIAIS
+   ========================================================= */
 
 main > section:nth-of-type(2) > article {
     width: 100%;
@@ -435,7 +455,9 @@ main > section:nth-of-type(2) > article {
 }
 
 
-/* Ícones */
+/* =========================================================
+   ÍCONES DOS DIFERENCIAIS
+   ========================================================= */
 
 main > section:nth-of-type(2) > article > i {
     display: inline-flex;
@@ -457,7 +479,9 @@ main > section:nth-of-type(2) > article > i {
 }
 
 
-/* Hover */
+/* =========================================================
+   HOVER DOS DIFERENCIAIS
+   ========================================================= */
 
 main > section:nth-of-type(2) > article:hover {
     transform: translateY(-8px);
@@ -476,7 +500,9 @@ main > section:nth-of-type(2) > article:hover {
 }
 
 
-/* Cards dos pratos */
+/* =========================================================
+   CARDS DOS PRATOS
+   ========================================================= */
 
 #cardapio > article {
     overflow: hidden;
@@ -494,7 +520,9 @@ main > section:nth-of-type(2) > article:hover {
 }
 
 
-/* Imagens */
+/* =========================================================
+   IMAGENS DOS PRATOS
+   ========================================================= */
 
 #cardapio article figure {
     overflow: hidden;
@@ -513,14 +541,18 @@ main > section:nth-of-type(2) > article:hover {
 }
 
 
-/* Legenda */
+/* =========================================================
+   LEGENDA
+   ========================================================= */
 
 #cardapio article figcaption {
     display: none;
 }
 
 
-/* Conteúdo */
+/* =========================================================
+   CONTEÚDO DOS CARDS
+   ========================================================= */
 
 #cardapio article h3,
 #cardapio article > p {
@@ -533,7 +565,9 @@ main > section:nth-of-type(2) > article:hover {
 }
 
 
-/* Preço */
+/* =========================================================
+   PREÇO
+   ========================================================= */
 
 #cardapio article > p:first-of-type {
     color: var(--cor-acao);
@@ -547,7 +581,9 @@ main > section:nth-of-type(2) > article:hover {
 }
 
 
-/* Hover */
+/* =========================================================
+   HOVER DOS CARDS
+   ========================================================= */
 
 #cardapio > article:hover {
     transform: translateY(-6px);
@@ -649,7 +685,7 @@ main > section:nth-of-type(2) > article:hover {
    ========================================================= */
 
 body > footer {
-    padding: 1rem 1rem;
+    padding: 1rem;
 
     background-color: var(--cor-texto);
     color: var(--cor-branco);
@@ -673,7 +709,7 @@ body > footer p + p {
    ========================================================= */
 
 body > footer nav {
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
 }
 
 body > footer nav ul {
@@ -681,18 +717,29 @@ body > footer nav ul {
     align-items: center;
     justify-content: center;
 
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
+
+/* =========================================================
+   BOTÕES DAS REDES SOCIAIS
+   ========================================================= */
+
 body > footer nav a {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid var(--cor-secundaria);
+    /*
+       IMPORTANTE:
+       O fundo permanece transparente.
+    */
+    background-color: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
 
     color: var(--cor-branco);
@@ -700,13 +747,16 @@ body > footer nav a {
     font-size: 0;
 
     transition:
-        background-color var(--transicao),
         border-color var(--transicao),
-        transform var(--transicao);
+        color var(--transicao),
+        transform var(--transicao),
+        box-shadow var(--transicao);
 }
 
 
-/* Ícones sociais */
+/* =========================================================
+   ÍCONES DAS REDES SOCIAIS
+   ========================================================= */
 
 body > footer nav a i {
     display: inline-flex;
@@ -719,25 +769,83 @@ body > footer nav a i {
     margin: 0;
     padding: 0;
 
-    color: inherit;
+    /*
+       Força o ícone a permanecer branco.
+    */
+    color: var(--cor-branco);
 
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1;
 
     position: static;
     transform: none;
+
+    transition:
+        color var(--transicao),
+        transform var(--transicao);
 }
 
 
-/* Hover */
+/* =========================================================
+   HOVER DAS REDES SOCIAIS
+   ========================================================= */
 
-body > footer nav a:hover{
-    background-color: var(--cor-acao);
+body > footer nav a:hover {
+    /*
+       O fundo NÃO fica laranja.
+    */
+    background-color: transparent;
+
+    /*
+       Apenas a borda fica laranja.
+    */
     border-color: var(--cor-acao);
-    color: var(--cor-branco);
 
-    transform: translateY(-3px);
+    /*
+       A cor do link também fica laranja.
+    */
+    color: var(--cor-acao);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 18px rgba(200, 90, 50, 0.20);
 }
+
+
+/* =========================================================
+   HOVER DO ÍCONE
+   ========================================================= */
+
+body > footer nav a:hover i {
+    /*
+       O ícone fica laranja,
+       mas o fundo continua transparente.
+    */
+    color: var(--cor-acao);
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   ACTIVE
+   ========================================================= */
+
+body > footer nav a:active {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOCO - ACESSIBILIDADE
+   ========================================================= */
+
+body > footer nav a:focus-visible {
+    outline: 3px solid var(--cor-acao);
+    outline-offset: 4px;
+}
+
 
 /* =========================================================
    TABLET
@@ -941,6 +1049,34 @@ body > footer nav a:hover{
     #contato > article:last-child {
         margin-bottom: 0;
     }
+
+
+    /* Redes sociais */
+
+    body > footer nav {
+        margin-top: 1.5rem;
+    }
+
+    body > footer nav ul {
+        gap: 0.7rem;
+    }
+
+    body > footer nav a {
+        width: 44px;
+        height: 44px;
+    }
+
+    body > footer nav a i {
+        font-size: 1.1rem;
+    }
+
+    body > footer nav a:hover {
+        background-color: transparent;
+    }
+
+    body > footer nav a:hover i {
+        color: var(--cor-acao);
+    }
 }
 
 
@@ -955,8 +1091,7 @@ body > footer nav a:hover{
     }
 
     *,
-    *::before,
-    *::after {
+    *::before {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
